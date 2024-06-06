@@ -28,8 +28,11 @@ class Selenium(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_one(self):
-        print('success')
+    def test_case1(self):
+        print('test_case1')
+
+    def test_case2(self):
+        print('test_case2')
 
 if __name__ == '__main__':
     Selenium()
