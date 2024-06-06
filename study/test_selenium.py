@@ -27,3 +27,9 @@ class Selenium(unittest.TestCase):
     #     print(list)#展示下拉框元素
     def tearDown(self):
         pass
+
+    def test_one(self):
+        print('success')
+
+if __name__ == '__main__':
+    Selenium()

@@ -63,6 +63,3 @@ class TestDict(unittest.TestCase):
         d = Dict()
         with self.assertRaises(AttributeError):
             value = d.empty
-
-if __name__ == '__main__':
-    unittest.main()
