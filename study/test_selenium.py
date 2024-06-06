@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import Select  # 导入下拉框操作模块
 from selenium.webdriver import ActionChains  # 导入action模块
 
 
-class Selenium():
+class Selenium(unittest.TestCase):
     def setUp(self):  # 测试固件，前置条件,打开浏览器
         # 关闭chrome正受到自动测试软件的控制
         chrome_options = webdriver.ChromeOptions()
@@ -25,24 +25,5 @@ class Selenium():
     # options_list = Select(select).options#获取下拉框元素内容
     # for list in options_list:#遍历下拉框元素内容
     #     print(list)#展示下拉框元素
-
-
-from multiprocessing import Pool
-import os, time, random
-
-def long_time_task(name):
-    print('Run task %s (%s)...' % (name, os.getpid()))
-    start = time.time()
-    time.sleep(random.random() * 3)
-    end = time.time()
-    print('Task %s runs %0.2f seconds.' % (name, (end - start)))
-
-if __name__=='__main__':
-    print('Parent process %s.' % os.getpid())
-    p = Pool(4)
-    for i in range(5):
-        p.apply_async(long_time_task, args=(i,))
-    print('Waiting for all subprocesses done...')
-    p.close()
-    p.join()
-    print('All subprocesses done.')
+    def tearDown(self):
+        pass
